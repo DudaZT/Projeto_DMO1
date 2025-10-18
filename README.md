@@ -72,7 +72,7 @@ Na tela de detalhes, o app permite:
 
 ## 🎥 Demonstração em Vídeo
 Assista ao vídeo mostrando o app em ação:  
-👉 [Link para o vídeo](link_do_video.mp4)
+👉 [Link para o vídeo](./video/video_projeto.webm)
 
 ---
 
