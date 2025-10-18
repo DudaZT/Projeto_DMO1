@@ -1,6 +1,6 @@
 # 📱 Guia Pocket - Bairro
 
-Aplicativo Android em **Kotlin** desenvolvido para divulgar pequenos **serviços e comércios locais** — como lanchonetes, costureiras, oficinas e barbearias.  
+Aplicativo Android em **Kotlin** desenvolvido para divulgar pequenos **serviços e comércios locais** — como lanchonetes, hospitais, mercados, entre outros.  
 
 O app tem um visual moderno, é funcional e conta com **modo claro/escuro** 🌗 e **múltiplos idiomas** 🌍 (português e inglês).
 
