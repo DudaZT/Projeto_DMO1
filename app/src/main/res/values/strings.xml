@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pocket Guide - Vila Xavier</string>
+    <string name="welcome_title">Neighborhood Services Vila Xavier</string>
+    <string name="service_details">Service Details</string>
+    <string name="category">Category</string>
+    <string name="address">Address</string>
+    <string name="phone">Phone</string>
+    <string name="website">Website</string>
+    <string name="call">Call</string>
+    <string name="open_website">Open Website</string>
+    <string name="open_maps">View on Map</string>
+    <string name="share">Share</string>
+    <string name="description">Description</string>
+    <string name="back">Back</string>
+    <string name="service_image">Service Image</string>
+    <string name="share_service">Share Service</string>
+    <string name="quick_actions">Quick Actions</string>
+
+    <!-- Categories -->
+    <string name="category_food">Food</string>
+    <string name="category_beauty">Beauty</string>
+    <string name="category_repair">Repairs</string>
+    <string name="category_services">Services</string>
+    <string name="category_retail">Retail</string>
+    <string name="category_health">Health</string>
+    <string name="category_education">Education</string>
+
+    <!-- Real Business names -->
+    <string name="upa_vila_xavier">Upa Vila Xavier</string>
+    <string name="savegnago">Savegnago</string>
+    <string name="tokio_bar">Tókio Bar</string>
+    <string name="pipocopos">Pipocopos</string>
+    <string name="sesi">Sesi</string>
+    <string name="pastelaria_amada">Pastelaria Amada</string>
+
+    <!-- Real Descriptions -->
+    <string name="upa_vila_xavier_description">24-hour emergency care unit offering medical services and emergency treatment for the community.</string>
+    <string name="savegnago_description">Large supermarket with wide variety of products, fresh foods, and household items at competitive prices.</string>
+    <string name="tokio_bar_description">Cozy bar with Japanese-inspired drinks and snacks, perfect for social gatherings and casual meetings.</string>
+    <string name="pipocopos_description">Specialized popcorn shop offering various flavors of gourmet popcorn and snacks for all tastes.</string>
+    <string name="sesi_description">Social Service of Industry offering educational programs, sports activities, and cultural events for the community.</string>
+    <string name="pastelaria_amada_description">Traditional Brazilian pasteleria serving delicious fried pastries with various fillings and flavors.</string>
+
+    <!-- Real Addresses -->
+    <string name="upa_vila_xavier_address">Rua José do Patrocínio, 660 - Vila Xavier, Araraquara - SP</string>
+    <string name="savegnago_address">Alameda Paulista, 610 - Jardim Silvania (Vila Xavier), Araraquara - SP</string>
+    <string name="tokio_bar_address">Av. Vinte e Dois de Agosto, 1177 - Vila Xavier (Vila Xavier), Araraquara - SP</string>
+    <string name="pipocopos_address">R. Padre Luciano, 58 - Vila Xavier, Araraquara - SP</string>
+    <string name="sesi_address">Av. Octaviano de Arruda Campos, 686 - Jardim Floridiana (Vila Xavier), Araraquara - SP</string>
+    <string name="pastelaria_amada_address">Alameda Paulista, 1067 - Vila Tito de Carvalho (Vila Xavier), Araraquara - SP</string>
+
+    <!-- Real Phones -->
+    <string name="upa_vila_xavier_phone">(16) 3335-1500</string>
+    <string name="savegnago_phone">(16) 3339-7400</string>
+    <string name="tokio_bar_phone">(16) 3319-3383</string>
+    <string name="pipocopos_phone">(16) 3303-8775</string>
+    <string name="sesi_phone">(16) 3305-2500</string>
+    <string name="pastelaria_amada_phone">(16) 99604-5266</string>
+</resources>

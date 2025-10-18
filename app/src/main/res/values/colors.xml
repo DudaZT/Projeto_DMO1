@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary_color">#6750A4</color>
+    <color name="primary_dark">#21005E</color>
+    <color name="secondary_color">#625B71</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+    <!-- Cores para modo claro -->
+    <color name="surface_color">#FFFBFE</color>
+    <color name="on_surface">#1C1B1F</color>
+    <color name="surface_variant_light">#E7E0EC</color>
+    <color name="on_surface_variant_light">#49454E</color>
+    <color name="outline">#79747E</color>
+</resources>
