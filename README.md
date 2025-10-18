@@ -43,18 +43,30 @@ Na tela de detalhes, o app permite:
 - Adaptação ao tema do sistema (light/dark)  
 
 > 📸 **Demonstrações (prints do app)**  
->
-> **Modo Claro:**  
-> ![Modo Claro](caminho_para_imagem_claro.png)  
->
-> **Modo Escuro:**  
-> ![Modo Escuro](caminho_para_imagem_escuro.png)  
->
-> **Português:**  
-> ![Português](caminho_para_imagem_pt.png)  
->
-> **Inglês:**  
-> ![Inglês](caminho_para_imagem_en.png)
+
+### 🌞 Modo Claro
+<p align="left">
+  <img src="./img/modo_claro_1_pt.png" width="200"/>
+  <img src="./img/modo_claro_2_pt.png" width="200"/>
+</p>
+
+### 🌙 Modo Escuro
+<p align="left">
+  <img src="./img/modo_escuro_1_pt.png" width="200"/>
+  <img src="./img/modo_escuro_2_pt.png" width="200"/>
+</p>
+
+### 🇧🇷 Português
+<p align="left">
+  <img src="./img/modo_claro_1_pt.png" width="200"/>
+  <img src="./img/modo_claro_2_pt.png" width="200"/>
+</p>
+
+### 🇺🇸 Inglês
+<p align="left">
+  <img src="./img/modo_ingles_1.png" width="200"/>
+  <img src="./img/modo_ingles_2.png" width="200"/>
+</p>
 
 ---
 
