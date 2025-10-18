@@ -1,68 +1,67 @@
-# Guia Pocket - Bairro
+# ğŸ“± Guia Pocket - Bairro
 
-Aplicativo Android em **Kotlin** desenvolvido para divulgar pequenos serviços e comércios do bairro X, como lanchonetes, costureiras, oficinas e barbearias.  
+Aplicativo Android em **Kotlin** desenvolvido para divulgar pequenos **serviÃ§os e comÃ©rcios locais** â€” como lanchonetes, hospitais, mercados, entre outros.  
 
-O app é funcional, visualmente atrativo e conta com suporte a **modo claro/escuro** e **múltiplos idiomas** (português e inglês).
-
----
-
-## ?? Funcionalidades
-
-### Lista de Serviços
-- Exibe uma **ListView** com ao menos 6 serviços cadastrados.
-- Cada item mostra **imagem, nome e categoria** usando layout personalizado.
-- Clique em um item abre a **tela de detalhes** via Intent explícita.
-
-### Funcionalidades com Intents Implícitas
-A partir da tela de detalhes, o app permite:
-- ?? Realizar ligação telefônica  
-- ?? Abrir o site do estabelecimento  
-- ?? Visualizar endereço no Google Maps  
-- ?? Compartilhar os dados do serviço com outro app (WhatsApp, e-mail, etc.)
-
-### Internacionalização e Modo Noturno
-- Suporte a **português (pt-BR)** e **inglês (en)**.  
-  O idioma é detectado automaticamente ao iniciar.
-- Respeita o **modo claro/escuro** do sistema, com cores definidas em `themes.xml` e `colors.xml`.
+O app tem um visual moderno, Ã© funcional e conta com **modo claro/escuro** ğŸŒ— e **mÃºltiplos idiomas** ğŸŒ (portuguÃªs e inglÃªs).
 
 ---
 
-## ??? Tecnologias Utilizadas
-- Kotlin  
+## âœ¨ Funcionalidades
+
+### ğŸ§­ Lista de ServiÃ§os
+- Exibe uma **ListView** com pelo menos 6 serviÃ§os cadastrados.  
+- Cada item exibe **imagem, nome e categoria** com layout personalizado.  
+- Ao clicar em um item, o usuÃ¡rio Ã© levado para a **tela de detalhes** (Intent explÃ­cita).
+
+### ğŸ”— Intents ImplÃ­citas
+Na tela de detalhes, o app permite:
+- Fazer ligaÃ§Ã£o telefÃ´nica  
+- Abrir o site do estabelecimento  
+- Ver o endereÃ§o no Google Maps  
+- Compartilhar informaÃ§Ãµes do serviÃ§o (WhatsApp, e-mail, etc.)
+
+### ğŸŒ“ InternacionalizaÃ§Ã£o e Modo Noturno
+- Suporte a **portuguÃªs (pt-BR)** e **inglÃªs (en)**, com detecÃ§Ã£o automÃ¡tica do idioma.  
+- Suporte a **modo claro/escuro**, com cores definidas em `themes.xml` e `colors.xml`.
+
+---
+
+## ğŸ› ï¸ Tecnologias Utilizadas
+- **Kotlin**  
 - Android Studio  
 - ViewBinding  
 - ListView com Adapter personalizado  
-- Intents explícitas e implícitas  
-- Internacionalização (strings.xml)  
-- Tema claro/escuro (themes.xml / colors.xml)  
+- Intents explÃ­citas e implÃ­citas  
+- InternacionalizaÃ§Ã£o (`strings.xml`)  
+- Tema claro/escuro (`themes.xml` / `colors.xml`)
 
 ---
 
-## ?? Design e Interface
+## ğŸ–¼ï¸ Design e Interface
 - Layouts limpos e intuitivos  
-- Ícones e cores semânticas  
-- Adaptação automática ao tema do sistema  
+- Ãcones e cores semÃ¢nticas  
+- AdaptaÃ§Ã£o ao tema do sistema (light/dark)  
 
-> **Aqui você pode adicionar prints do app:**
+> ğŸ“¸ **DemonstraÃ§Ãµes (prints do app)**  
 >
 > **Modo Claro:**  
-> ![Modo Claro](caminho_para_imagem_claro.png)
+> ![Modo Claro](caminho_para_imagem_claro.png)  
 >
 > **Modo Escuro:**  
-> ![Modo Escuro](caminho_para_imagem_escuro.png)
+> ![Modo Escuro](caminho_para_imagem_escuro.png)  
 >
-> **Português:**  
-> ![Português](caminho_para_imagem_pt.png)
+> **PortuguÃªs:**  
+> ![PortuguÃªs](caminho_para_imagem_pt.png)  
 >
-> **Inglês:**  
-> ![Inglês](caminho_para_imagem_en.png)
+> **InglÃªs:**  
+> ![InglÃªs](caminho_para_imagem_en.png)
 
 ---
 
-## ?? Demonstração
-> **Vídeo curto demonstrando o app em funcionamento (até 30s):**  
-> [Link para o vídeo](link_do_video.mp4)
+## ğŸ¥ DemonstraÃ§Ã£o em VÃ­deo
+Assista ao vÃ­deo mostrando o app em aÃ§Ã£o:  
+ğŸ‘‰ [Link para o vÃ­deo](link_do_video.mp4)
 
 ---
 
-
+ğŸ“š Projeto desenvolvido para a disciplina **DMO1** â€” Desenvolvimento Mobile.
