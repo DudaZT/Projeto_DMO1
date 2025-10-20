@@ -56,13 +56,13 @@ Na tela de detalhes, o app permite:
   <img src="./img/modo_escuro_2_pt.png" width="200"/>
 </p>
 
-### 🇧🇷 Português
+### Português
 <p align="left">
   <img src="./img/modo_claro_1_pt.png" width="200"/>
   <img src="./img/modo_claro_2_pt.png" width="200"/>
 </p>
 
-### 🇺🇸 Inglês
+### Inglês
 <p align="left">
   <img src="./img/modo_ingles_1.png" width="200"/>
   <img src="./img/modo_ingles_2.png" width="200"/>
@@ -71,8 +71,11 @@ Na tela de detalhes, o app permite:
 ---
 
 ## 🎥 Demonstração em Vídeo
-Assista ao vídeo mostrando o app em ação:  
-👉 [Link para o vídeo](./video/video_projeto.webm)
+
+<video width="320" height="240" controls>
+  <source src="./video/video_projeto.mp4" type="video/mp4">
+  Seu navegador não suporta o elemento de vídeo.
+</video>
 
 ---
 
