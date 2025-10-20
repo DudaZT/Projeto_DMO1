@@ -1,10 +1,7 @@
 package com.example.guiapocket_bairrovilaxavier.ui
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.view.View
-import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
 import com.example.guiapocket_bairrovilaxavier.R
 import com.example.guiapocket_bairrovilaxavier.adapter.ServicoAdapter
@@ -14,7 +11,6 @@ import com.example.guiapocket_bairrovilaxavier.model.Servico
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var servicos: List<Servico>
-    private var servicoSelecionado: Servico? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,9 +18,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         loadData()
-        setupList()
-        setupButtons()
-        setupBackPressedHandler()
+        setupViews()
+        setupListeners()
     }
 
     private fun loadData() {
@@ -92,99 +87,16 @@ class MainActivity : AppCompatActivity() {
         ).sortedBy { it.nome }
     }
 
-    private fun setupList() {
+    private fun setupViews(){
         val adapter = ServicoAdapter(this, servicos)
         binding.listViewServicos.adapter = adapter
-
+    }
+    private fun setupListeners() {
         binding.listViewServicos.setOnItemClickListener { _, _, position, _ ->
-            val servico = servicos[position]
-            mostrarDetalhes(servico)
+            // Abre a nova Activity
+            val intent = Intent(this, DetalheServicoActivity::class.java)
+            intent.putExtra("servico", servicos[position])
+            startActivity(intent)
         }
     }
-
-    private fun setupButtons() {
-        binding.btnVoltar.setOnClickListener {
-            voltarParaLista()
-        }
-
-        binding.btnLigar.setOnClickListener {
-            servicoSelecionado?.let { servico ->
-                val intent = Intent(Intent.ACTION_DIAL).apply {
-                    data = Uri.parse("tel:${servico.telefone}")
-                }
-                startActivity(intent)
-            }
-        }
-
-        binding.btnSite.setOnClickListener {
-            servicoSelecionado?.let { servico ->
-                val intent = Intent(Intent.ACTION_VIEW).apply {
-                    data = Uri.parse(servico.website)
-                }
-                startActivity(intent)
-            }
-        }
-
-        binding.btnMaps.setOnClickListener {
-            servicoSelecionado?.let { servico ->
-                val intent = Intent(Intent.ACTION_VIEW).apply {
-                    data = Uri.parse("geo:0,0?q=${Uri.encode(servico.endereco)}")
-                }
-                startActivity(intent)
-            }
-        }
-
-        binding.btnCompartilhar.setOnClickListener {
-            servicoSelecionado?.let { servico ->
-                val shareIntent = Intent().apply {
-                    action = Intent.ACTION_SEND
-                    putExtra(Intent.EXTRA_TEXT,
-                        "${servico.nome}\n${servico.descricao}\n${servico.telefone}\n${servico.endereco}")
-                    type = "text/plain"
-                }
-                startActivity(Intent.createChooser(shareIntent, getString(R.string.share_service)))
-            }
-        }
-    }
-
-    private fun setupBackPressedHandler() {
-        onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
-            override fun handleOnBackPressed() {
-                if (binding.layoutDetalhes.visibility == View.VISIBLE) {
-                    voltarParaLista()
-                } else {
-                    isEnabled = false
-                    onBackPressedDispatcher.onBackPressed()
-                }
-            }
-        })
-    }
-
-    private fun mostrarDetalhes(servico: Servico) {
-        servicoSelecionado = servico
-        binding.layoutLista.visibility = View.GONE
-        binding.layoutDetalhes.visibility = View.VISIBLE
-
-        binding.imgDetalheFoto.setImageResource(servico.imagem)
-        binding.tvDetalheNome.text = servico.nome
-        binding.tvDetalheCategoria.text = servico.categoria
-        binding.tvDetalheDescricao.text = servico.descricao
-
-        // Formatar os textos com labels
-        binding.tvDetalheEndereco.text = "${getString(R.string.address)}: ${servico.endereco}"
-        binding.tvDetalheTelefone.text = "${getString(R.string.phone)}: ${servico.telefone}"
-        binding.tvDetalheWebsite.text = "${getString(R.string.website)}: ${servico.website}"
-
-        // Adicionar ícones
-        binding.tvDetalheEndereco.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_location, 0, 0, 0)
-        binding.tvDetalheTelefone.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_call, 0, 0, 0)
-        binding.tvDetalheWebsite.setCompoundDrawablesWithIntrinsicBounds(R.drawable.ic_website, 0, 0, 0)
-    }
-
-    private fun voltarParaLista() {
-        binding.layoutDetalhes.visibility = View.GONE
-        binding.layoutLista.visibility = View.VISIBLE
-        servicoSelecionado = null
-    }
-
 }
