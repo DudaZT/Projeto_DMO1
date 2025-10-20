@@ -1,9 +1,7 @@
 package com.example.guiapocket_bairrovilaxavier.model
 
-import android.os.Parcelable
-import kotlinx.parcelize.Parcelize
+import java.io.Serializable
 
-@Parcelize
 data class Servico(
     val id: Int,
     val nome: String,
@@ -13,4 +11,4 @@ data class Servico(
     val telefone: String,
     val website: String,
     val imagem: Int
-) : Parcelable
+) : Serializable
