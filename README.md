@@ -46,33 +46,33 @@ Na tela de detalhes, o app permite:
 
 ### 🌞 Modo Claro
 <p align="left">
-  <img src="./img/modo_claro_1_pt.png" width="200"/>
-  <img src="./img/modo_claro_2_pt.png" width="200"/>
+  <img src="https://github.com/DudaZT/Projeto_DMO1/blob/main/img/modo_claro_1_pt.png" width="200"/>
+  <img src="https://github.com/DudaZT/Projeto_DMO1/blob/main/img/modo_claro_2_pt.png" width="200"/>
 </p>
 
 ### 🌙 Modo Escuro
 <p align="left">
-  <img src="./img/modo_escuro_1_pt.png" width="200"/>
-  <img src="./img/modo_escuro_2_pt.png" width="200"/>
+  <img src="https://github.com/DudaZT/Projeto_DMO1/blob/main/img/modo_escuro_1_pt.png" width="200"/>
+  <img src="https://github.com/DudaZT/Projeto_DMO1/blob/main/img/modo_escuro_2_pt.png" width="200"/>
 </p>
 
 ### Português
 <p align="left">
-  <img src="./img/modo_claro_1_pt.png" width="200"/>
-  <img src="./img/modo_claro_2_pt.png" width="200"/>
+  <img src="https://github.com/DudaZT/Projeto_DMO1/blob/main/img/modo_claro_1_pt.png" width="200"/>
+  <img src="https://github.com/DudaZT/Projeto_DMO1/blob/main/img/modo_claro_2_pt.png" width="200"/>
 </p>
 
 ### Inglês
 <p align="left">
-  <img src="./img/modo_ingles_1.png" width="200"/>
-  <img src="./img/modo_ingles_2.png" width="200"/>
+  <img src="https://github.com/DudaZT/Projeto_DMO1/blob/main/img/modo_ingles_1.png" width="200"/>
+  <img src="https://github.com/DudaZT/Projeto_DMO1/blob/main/img/modo_ingles_2.png" width="200"/>
 </p>
 
 ---
 
 ## 🎥 Demonstração em Vídeo
 
-📹 **[Clique Aqui - Demonstração do App](./video/video_projeto.mp4)**
+📹 **[Clique Aqui - Demonstração do App](https://github.com/DudaZT/Projeto_DMO1/blob/main/video/video_projeto.mp4)**
 
 ---
 
