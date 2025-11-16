@@ -17,6 +17,13 @@
     <string name="share_service">Share Service</string>
     <string name="quick_actions">Quick Actions</string>
 
+    <!-- Registration -->
+    <string name="add_new_service">Add New Service</string>
+    <string name="register_new_service">Register New Service</string>
+    <string name="service_name">Service Name</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
+
     <!-- Categories -->
     <string name="category_food">Food</string>
     <string name="category_beauty">Beauty</string>

@@ -2,6 +2,7 @@ package com.example.guiapocket_bairrovilaxavier.ui
 
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
@@ -23,9 +24,13 @@ class DetalheServicoActivity : AppCompatActivity() {
         setupListeners()
     }
 
-    private fun loadData()
-    {
-        servico = intent.getSerializableExtra("servico") as Servico
+    private fun loadData() {
+        servico = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent.getSerializableExtra("servico", Servico::class.java)!!
+        } else {
+            @Suppress("DEPRECATION")
+            intent.getSerializableExtra("servico") as Servico
+        }
     }
 
     private fun setupViews() {

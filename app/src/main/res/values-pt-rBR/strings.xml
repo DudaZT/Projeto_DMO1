@@ -17,6 +17,13 @@
     <string name="share_service">Compartilhar Serviço</string>
     <string name="quick_actions">Ações Rápidas</string>
 
+    <!-- Cadastro -->
+    <string name="add_new_service">Adicionar Novo Serviço</string>
+    <string name="register_new_service">Cadastrar Novo Serviço</string>
+    <string name="service_name">Nome do Serviço</string>
+    <string name="cancel">Cancelar</string>
+    <string name="save">Salvar</string>
+
     <!-- Categorias -->
     <string name="category_food">Alimentação</string>
     <string name="category_beauty">Beleza</string>

@@ -11,6 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GuiaPocketBairroVilaXavier">
+
+        <activity
+            android:name=".ui.CadastroServicoActivity"
+            android:exported="true" />
+
         <activity
             android:name=".ui.DetalheServicoActivity"
             android:exported="true" />
