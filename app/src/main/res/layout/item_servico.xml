@@ -2,6 +2,7 @@
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="4dp"
@@ -11,10 +12,9 @@
     app:strokeColor="?attr/colorOutline"
     app:strokeWidth="1dp">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:padding="16dp"
         android:background="?attr/colorSurface">
 
@@ -24,35 +24,41 @@
             android:layout_height="80dp"
             android:scaleType="centerCrop"
             android:background="?attr/colorSurfaceVariant"
-            android:layout_marginEnd="16dp"
-            android:contentDescription="@string/service_image" />
+            android:contentDescription="@string/service_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/tvNome"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center_vertical">
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnSurface"
+            android:ellipsize="end"
+            android:maxLines="1"
+            tools:text="Nome do Serviço"
+            app:layout_constraintStart_toEndOf="@id/imgFoto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/imgFoto"
+            android:layout_marginStart="16dp" />
 
-            <TextView
-                android:id="@+id/tvNome"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="?attr/colorOnSurface"
-            android:paddingBottom="4dp" />
+        <TextView
+            android:id="@+id/tvCategoria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorOnPrimaryContainer"
+            android:textStyle="bold"
+            android:background="?attr/colorPrimaryContainer"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="4dp"
+            tools:text="Categoria"
+            app:layout_constraintStart_toEndOf="@id/imgFoto"
+            app:layout_constraintTop_toBottomOf="@id/tvNome"
+            app:layout_constraintBottom_toBottomOf="@id/imgFoto"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp" />
 
-            <TextView
-                android:id="@+id/tvCategoria"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="?attr/colorOnPrimaryContainer"
-                android:textStyle="bold"
-                android:background="?attr/colorPrimaryContainer"
-                android:paddingHorizontal="8dp"
-                android:paddingVertical="4dp"
-                android:drawablePadding="8dp" />
-        </LinearLayout>
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

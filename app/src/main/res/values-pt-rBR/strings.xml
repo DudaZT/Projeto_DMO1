@@ -1,28 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Nome do App -->
     <string name="app_name">Guia Pocket - Bairro Vila Xavier</string>
+
+    <!-- Main Activity -->
     <string name="welcome_title">Serviços do Bairro Vila Xavier</string>
+    <string name="add_new_service">Adicionar Novo Serviço</string>
+    <string name="filter_hint">Filtrar por nome ou categoria</string>
+
+    <!-- Detalhes do Serviço -->
     <string name="service_details">Detalhes do Serviço</string>
-    <string name="category">Categoria</string>
-    <string name="address">Endereço</string>
-    <string name="phone">Telefone</string>
-    <string name="website">Site</string>
+    <string name="service_image">Imagem do Serviço</string>
+    <string name="description">Descrição</string>
+    <string name="quick_actions">Ações Rápidas</string>
+    <string name="back">Voltar</string>
+    <string name="edit">Editar</string>
+    <string name="delete">Excluir</string>
+
+    <!-- Ações -->
     <string name="call">Ligar</string>
     <string name="open_website">Abrir Site</string>
     <string name="open_maps">Ver no Mapa</string>
     <string name="share">Compartilhar</string>
-    <string name="description">Descrição</string>
-    <string name="back">Voltar</string>
-    <string name="service_image">Imagem do Serviço</string>
     <string name="share_service">Compartilhar Serviço</string>
-    <string name="quick_actions">Ações Rápidas</string>
 
-    <!-- Cadastro -->
-    <string name="add_new_service">Adicionar Novo Serviço</string>
+    <!-- Cadastro de Serviço -->
     <string name="register_new_service">Cadastrar Novo Serviço</string>
     <string name="service_name">Nome do Serviço</string>
-    <string name="cancel">Cancelar</string>
+    <string name="category">Categoria</string>
+    <string name="address">Endereço</string>
+    <string name="phone">Telefone</string>
+    <string name="website">Site</string>
     <string name="save">Salvar</string>
+    <string name="update">Atualizar</string>
+    <string name="cancel">Cancelar</string>
 
     <!-- Categorias -->
     <string name="category_food">Alimentação</string>
@@ -33,35 +44,16 @@
     <string name="category_health">Saúde</string>
     <string name="category_education">Educação</string>
 
-    <!-- Nomes reais dos estabelecimentos -->
-    <string name="upa_vila_xavier">Upa Vila Xavier</string>
-    <string name="savegnago">Savegnago</string>
-    <string name="tokio_bar">Tókio Bar</string>
-    <string name="pipocopos">Pipocopos</string>
-    <string name="sesi">Sesi</string>
-    <string name="pastelaria_amada">Pastelaria Amada</string>
+    <!-- Mensagens de Validação -->
+    <string name="error_name_required">Nome é obrigatório</string>
+    <string name="error_category_required">Categoria é obrigatória</string>
+    <string name="success_service_saved">Serviço salvo com sucesso!</string>
+    <string name="success_service_updated">Serviço atualizado com sucesso!</string>
+    <string name="success_service_deleted">Serviço excluído com sucesso!</string>
 
-    <!-- Descrições reais -->
-    <string name="upa_vila_xavier_description">Unidade de Pronto Atendimento 24 horas oferecendo serviços médicos e atendimento de emergência para a comunidade.</string>
-    <string name="savegnago_description">Supermercado de grande porte com ampla variedade de produtos, alimentos frescos e itens domésticos a preços competitivos.</string>
-    <string name="tokio_bar_description">Bar aconchegante com drinks e petiscos de inspiração japonesa, perfeito para encontros sociais e reuniões casuais.</string>
-    <string name="pipocopos_description">Um espaço amplo, completo e supermoderno que conta com uma variedade enorme de produtos e artigos para festa com os preços mais convidativos do mercado.</string>
-    <string name="sesi_description">Serviço Social da Indústria oferecendo programas educacionais, atividades esportivas e eventos culturais para a comunidade.</string>
-    <string name="pastelaria_amada_description">Pastelaria tradicional brasileira servindo deliciosos pastéis fritos com diversos recheios e sabores.</string>
-
-    <!-- Endereços reais -->
-    <string name="upa_vila_xavier_address">Rua José do Patrocínio, 660 - Vila Xavier, Araraquara - SP</string>
-    <string name="savegnago_address">Alameda Paulista, 610 - Jardim Silvania (Vila Xavier), Araraquara - SP</string>
-    <string name="tokio_bar_address">Av. Vinte e Dois de Agosto, 1177 - Vila Xavier (Vila Xavier), Araraquara - SP</string>
-    <string name="pipocopos_address">R. Padre Luciano, 58 - Vila Xavier, Araraquara - SP</string>
-    <string name="sesi_address">Av. Octaviano de Arruda Campos, 686 - Jardim Floridiana (Vila Xavier), Araraquara - SP</string>
-    <string name="pastelaria_amada_address">Alameda Paulista, 1067 - Vila Tito de Carvalho (Vila Xavier), Araraquara - SP</string>
-
-    <!-- Telefones reais -->
-    <string name="upa_vila_xavier_phone">(16) 3335-1500</string>
-    <string name="savegnago_phone">(16) 3339-7400</string>
-    <string name="tokio_bar_phone">(16) 3319-3383</string>
-    <string name="pipocopos_phone">(16) 3303-8775</string>
-    <string name="sesi_phone">(16) 3305-2500</string>
-    <string name="pastelaria_amada_phone">(16) 99604-5266</string>
+    <!-- Diálogos de Confirmação -->
+    <string name="confirm_delete_title">Confirmar Exclusão</string>
+    <string name="confirm_delete_message">Tem certeza que deseja excluir o serviço "%s"?</string>
+    <string name="confirm_delete_positive">Excluir</string>
+    <string name="confirm_delete_negative">Cancelar</string>
 </resources>

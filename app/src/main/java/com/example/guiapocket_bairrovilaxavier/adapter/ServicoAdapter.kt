@@ -7,7 +7,7 @@ import com.example.guiapocket_bairrovilaxavier.databinding.ItemServicoBinding
 import com.example.guiapocket_bairrovilaxavier.model.Servico
 
 class ServicoAdapter(
-    private val servicos: List<Servico>,
+    private var servicos: List<Servico>,
     private val onItemClick: (Servico) -> Unit
 ) : RecyclerView.Adapter<ServicoAdapter.ServicoViewHolder>() {
 
@@ -15,7 +15,7 @@ class ServicoAdapter(
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(servico: Servico) {
-            binding.imgFoto.setImageResource(servico.imagem)
+            binding.imgFoto.setImageURI(servico.imagem)
             binding.tvNome.text = servico.nome
             binding.tvCategoria.text = servico.categoria
 
@@ -39,4 +39,9 @@ class ServicoAdapter(
     }
 
     override fun getItemCount(): Int = servicos.size
+
+    fun updateLista(novosServicos: List<Servico>) {
+        this.servicos = novosServicos
+        notifyDataSetChanged()
+    }
 }

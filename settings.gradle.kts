@@ -21,4 +21,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "Guia Pocket - Bairro Vila Xavier"
 include(":app")
- 

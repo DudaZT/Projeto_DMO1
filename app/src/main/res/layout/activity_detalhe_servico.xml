@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,198 +9,257 @@
     android:padding="16dp"
     tools:context=".ui.DetalheServicoActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:background="?attr/colorSurface">
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btnVoltar">
 
-        <ImageView
-            android:id="@+id/imgDetalheFoto"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:background="?attr/colorSurfaceVariant"
-            android:layout_marginBottom="24dp"
-            android:contentDescription="@string/service_image" />
+            android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tvDetalheNome"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="24sp"
-            android:textStyle="bold"
-            android:textColor="?attr/colorOnSurface"
-            android:paddingBottom="8dp" />
+            <ImageView
+                android:id="@+id/imgDetalheFoto"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
+                android:scaleType="centerCrop"
+                android:background="?attr/colorSurfaceVariant"
+                android:contentDescription="@string/service_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="24dp" />
 
-        <TextView
-            android:id="@+id/tvDetalheCategoria"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="?attr/colorPrimary"
-            android:textStyle="bold"
-            android:paddingBottom="16dp" />
-
-        <TextView
-            android:id="@+id/tvDetalheDescricao"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="?attr/colorOnSurface"
-            android:paddingBottom="16dp"
-            android:lineSpacingExtra="4dp" />
-
-        <com.google.android.material.card.MaterialCardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            app:cardElevation="2dp"
-            app:cardCornerRadius="8dp"
-            app:cardBackgroundColor="?attr/colorSurfaceVariant">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:id="@+id/tvDetalheEndereco"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="?attr/colorOnSurfaceVariant"
-                    android:drawablePadding="8dp"
-                    android:paddingBottom="12dp" />
-
-                <TextView
-                    android:id="@+id/tvDetalheTelefone"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="?attr/colorOnSurfaceVariant"
-                    android:drawablePadding="8dp"
-                    android:paddingBottom="12dp" />
-
-                <TextView
-                    android:id="@+id/tvDetalheWebsite"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="?attr/colorOnSurfaceVariant"
-                    android:drawablePadding="8dp" />
-            </LinearLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <!-- Botões de Ação em Grid com Ícones -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginTop="24dp"
-            android:paddingVertical="8dp">
-
-            <!-- Título da Seção -->
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/tvDetalheNome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorOnSurface"
+                tools:text="Nome do Serviço"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/imgDetalheFoto"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvDetalheCategoria"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorPrimary"
+                android:textStyle="bold"
+                tools:text="Categoria"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDetalheNome"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/tvDetalheDescricao"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="?attr/colorOnSurface"
+                android:lineSpacingExtra="4dp"
+                tools:text="Descrição detalhada do serviço..."
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDetalheCategoria"
+                android:layout_marginBottom="16dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardInfo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:cardElevation="2dp"
+                app:cardCornerRadius="8dp"
+                app:cardBackgroundColor="?attr/colorSurfaceVariant"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDetalheDescricao"
+                android:layout_marginBottom="16dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/tvDetalheEndereco"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:drawablePadding="8dp"
+                        tools:text="Endereço: Rua Exemplo, 123"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/tvDetalheTelefone"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:drawablePadding="8dp"
+                        tools:text="Telefone: (11) 99999-9999"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvDetalheEndereco"
+                        android:layout_marginBottom="12dp" />
+
+                    <TextView
+                        android:id="@+id/tvDetalheWebsite"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:drawablePadding="8dp"
+                        tools:text="Website: www.exemplo.com"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvDetalheTelefone" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/tvQuickActionsTitle"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="@string/quick_actions"
                 android:textSize="18sp"
                 android:textStyle="bold"
                 android:textColor="?attr/colorOnSurface"
                 android:gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardInfo"
+                android:layout_marginTop="24dp"
                 android:layout_marginBottom="16dp"
                 android:paddingStart="8dp"
                 android:paddingEnd="8dp" />
 
-            <!-- Primeira Linha -->
-            <LinearLayout
-                android:layout_width="match_parent"
+            <!-- Primeira Linha de Botões -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLigar"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:text="@string/call"
+                android:textSize="14sp"
+                app:icon="@drawable/ic_call"
+                app:iconGravity="textStart"
+                app:iconPadding="12dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:gravity="start|center_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnSite"
+                app:layout_constraintTop_toBottomOf="@id/tvQuickActionsTitle"
+                android:layout_marginEnd="6dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnSite"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="@string/open_website"
+                android:textSize="14sp"
+                app:icon="@drawable/ic_website"
+                app:iconGravity="textStart"
+                app:iconPadding="12dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:gravity="start|center_vertical"
+                app:layout_constraintStart_toEndOf="@id/btnLigar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btnLigar"
+                app:layout_constraintBottom_toBottomOf="@id/btnLigar"
+                android:layout_marginStart="6dp" />
+
+            <!-- Segunda Linha de Botões -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMaps"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:text="@string/open_maps"
+                android:textSize="14sp"
+                app:icon="@drawable/ic_location"
+                app:iconGravity="textStart"
+                app:iconPadding="12dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:gravity="start|center_vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnCompartilhar"
+                app:layout_constraintTop_toBottomOf="@id/btnLigar"
+                app:layout_constraintBottom_toBottomOf="@id/btnCompartilhar"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="6dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCompartilhar"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="@string/share"
+                android:textSize="14sp"
+                app:icon="@drawable/ic_share"
+                app:iconGravity="textStart"
+                app:iconPadding="12dp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:gravity="start|center_vertical"
+                app:layout_constraintStart_toEndOf="@id/btnMaps"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btnSite"
+                app:layout_constraintBottom_toBottomOf="@id/btnMaps"
+                android:layout_marginStart="6dp"
+                android:layout_marginTop="12dp" />
+
+            <!-- Botões de Edição/Exclusão -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEditar"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginBottom="12dp">
+                android:text="@string/edit"
+                app:icon="@drawable/ic_edit"
+                app:iconGravity="textStart"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnExcluir"
+                app:layout_constraintTop_toBottomOf="@id/btnMaps"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnLigar"
-                    style="@style/Widget.Material3.Button.OutlinedButton"
-                    android:layout_width="0dp"
-                    android:layout_height="60dp"
-                    android:layout_weight="1"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginEnd="6dp"
-                    android:text="@string/call"
-                    android:textSize="14sp"
-                    app:icon="@drawable/ic_call"
-                    app:iconGravity="textStart"
-                    app:iconPadding="12dp"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:gravity="start|center_vertical" />
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnSite"
-                    style="@style/Widget.Material3.Button.OutlinedButton"
-                    android:layout_width="0dp"
-                    android:layout_height="60dp"
-                    android:layout_weight="1"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginEnd="12dp"
-                    android:text="@string/open_website"
-                    android:textSize="14sp"
-                    app:icon="@drawable/ic_website"
-                    app:iconGravity="textStart"
-                    app:iconPadding="12dp"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:gravity="start|center_vertical" />
-            </LinearLayout>
-
-            <!-- Segunda Linha -->
-            <LinearLayout
-                android:layout_width="match_parent"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnExcluir"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center">
+                android:text="@string/delete"
+                app:icon="@drawable/ic_delete"
+                app:iconGravity="textStart"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                app:layout_constraintStart_toEndOf="@id/btnEditar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btnEditar"
+                app:layout_constraintBottom_toBottomOf="@id/btnEditar"
+                android:layout_marginStart="8dp" />
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnMaps"
-                    style="@style/Widget.Material3.Button.OutlinedButton"
-                    android:layout_width="0dp"
-                    android:layout_height="60dp"
-                    android:layout_weight="1"
-                    android:layout_marginStart="12dp"
-                    android:layout_marginEnd="6dp"
-                    android:text="@string/open_maps"
-                    android:textSize="14sp"
-                    app:icon="@drawable/ic_location"
-                    app:iconGravity="textStart"
-                    app:iconPadding="12dp"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:gravity="start|center_vertical" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnCompartilhar"
-                    style="@style/Widget.Material3.Button.OutlinedButton"
-                    android:layout_width="0dp"
-                    android:layout_height="60dp"
-                    android:layout_weight="1"
-                    android:layout_marginStart="6dp"
-                    android:layout_marginEnd="12dp"
-                    android:text="@string/share"
-                    android:textSize="14sp"
-                    app:icon="@drawable/ic_share"
-                    app:iconGravity="textStart"
-                    app:iconPadding="12dp"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="20dp"
-                    android:gravity="start|center_vertical" />
-            </LinearLayout>
-        </LinearLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnVoltar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        style="@style/Widget.Material3.Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnVoltar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/back"
-            style="@style/Widget.Material3.Button" />
-    </LinearLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

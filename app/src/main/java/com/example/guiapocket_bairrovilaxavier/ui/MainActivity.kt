@@ -1,39 +1,48 @@
 package com.example.guiapocket_bairrovilaxavier.ui
 
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.guiapocket_bairrovilaxavier.R
 import com.example.guiapocket_bairrovilaxavier.adapter.ServicoAdapter
+import com.example.guiapocket_bairrovilaxavier.data.database.AppDatabase
 import com.example.guiapocket_bairrovilaxavier.databinding.ActivityMainBinding
 import com.example.guiapocket_bairrovilaxavier.model.Servico
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private val servicos = mutableListOf<Servico>()
     private lateinit var adapter: ServicoAdapter
+    private lateinit var database: AppDatabase
+    private val servicos = mutableListOf<Servico>() // Lista em memória para filtro
 
+    // Launcher para DetalheServicoActivity
+    private val detalheLauncher = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()
+    ) { result ->
+        // Se voltou da tela de detalhes com resultado OK (após exclusão ou edição),
+        // recarrega os dados
+        if (result.resultCode == RESULT_OK) {
+            carregarDados()
+        }
+    }
+
+    // Launcher para CadastroServicoActivity
     private val cadastroLauncher = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
     ) { result ->
+        // Se voltou da tela de cadastro com resultado OK, recarrega os dados
         if (result.resultCode == RESULT_OK) {
-            val data = result.data
-            val novoServico = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                data?.getSerializableExtra("novoServico", Servico::class.java)
-            } else {
-                @Suppress("DEPRECATION")
-                data?.getSerializableExtra("novoServico") as? Servico
-            }
-            novoServico?.let {
-                servicos.add(it)
-                servicos.sortBy { servico -> servico.nome }
-                adapter.notifyDataSetChanged()
-            }
+            carregarDados()
         }
     }
 
@@ -42,87 +51,27 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        loadData()
+        // Inicializa o banco de dados
+        database = AppDatabase.getInstance(this)
+
         setupViews()
         setupListeners()
     }
 
-    private fun loadData() {
-        servicos.clear()
-        servicos.addAll(
-            listOf(
-                Servico(
-                    1,
-                    getString(R.string.upa_vila_xavier),
-                    getString(R.string.category_health),
-                    getString(R.string.upa_vila_xavier_description),
-                    getString(R.string.upa_vila_xavier_address),
-                    getString(R.string.upa_vila_xavier_phone),
-                    "https://www.araraquara.sp.gov.br/servicos/upas",
-                    R.drawable.upa
-                ),
-                Servico(
-                    2,
-                    getString(R.string.savegnago),
-                    getString(R.string.category_retail),
-                    getString(R.string.savegnago_description),
-                    getString(R.string.savegnago_address),
-                    getString(R.string.savegnago_phone),
-                    "https://www.savegnago.com.br/araraquara",
-                    R.drawable.savegnago
-                ),
-                Servico(
-                    3,
-                    getString(R.string.tokio_bar),
-                    getString(R.string.category_food),
-                    getString(R.string.tokio_bar_description),
-                    getString(R.string.tokio_bar_address),
-                    getString(R.string.tokio_bar_phone),
-                    "https://bio.site/tokiobar",
-                    R.drawable.tokio_bar
-                ),
-                Servico(
-                    4,
-                    getString(R.string.pipocopos),
-                    getString(R.string.category_food),
-                    getString(R.string.pipocopos_description),
-                    getString(R.string.pipocopos_address),
-                    getString(R.string.pipocopos_phone),
-                    "https://pipocopos.com.br",
-                    R.drawable.pipocopos
-                ),
-                Servico(
-                    5,
-                    getString(R.string.sesi),
-                    getString(R.string.category_education),
-                    getString(R.string.sesi_description),
-                    getString(R.string.sesi_address),
-                    getString(R.string.sesi_phone),
-                    "https://www.sesisp.org.br",
-                    R.drawable.sesi
-                ),
-                Servico(
-                    6,
-                    getString(R.string.pastelaria_amada),
-                    getString(R.string.category_food),
-                    getString(R.string.pastelaria_amada_description),
-                    getString(R.string.pastelaria_amada_address),
-                    getString(R.string.pastelaria_amada_phone),
-                    "https://pastelariadaamada.delmatchcardapio.com",
-                    R.drawable.pastelaria_amada
-                )
-            ).sortedBy { it.nome }
-        )
+    override fun onResume() {
+        super.onResume()
+        // Carrega dados do banco
+        carregarDados()
     }
 
     private fun setupViews() {
         binding.recyclerViewServicos.layoutManager = LinearLayoutManager(this)
 
-        adapter = ServicoAdapter(servicos) { servico ->
+        adapter = ServicoAdapter(emptyList()) { servico ->
             val intent = Intent(this, DetalheServicoActivity::class.java).apply {
                 putExtra("servico", servico)
             }
-            startActivity(intent)
+            detalheLauncher.launch(intent)
         }
 
         binding.recyclerViewServicos.adapter = adapter
@@ -137,6 +86,48 @@ class MainActivity : AppCompatActivity() {
         binding.btnAdicionarServico.setOnClickListener {
             val intent = Intent(this, CadastroServicoActivity::class.java)
             cadastroLauncher.launch(intent)
+        }
+
+        // Listener para o campo de filtro
+        binding.edtFiltro.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                aplicarFiltro(s?.toString() ?: "")
+            }
+
+            override fun afterTextChanged(s: Editable?) {}
+        })
+    }
+
+    private fun carregarDados() {
+        lifecycleScope.launch(Dispatchers.IO) {
+            try {
+                database.servicoDao().listarTodos().collectLatest { servicosDoBanco ->
+                    // Atualiza a lista em memória
+                    servicos.clear()
+                    servicos.addAll(servicosDoBanco)
+
+                    withContext(Dispatchers.Main) {
+                        adapter.updateLista(servicosDoBanco)
+                    }
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+    }
+
+    private fun aplicarFiltro(filtro: String) {
+        if (filtro.isEmpty()) {
+            adapter.updateLista(servicos)
+        } else {
+            val filtroLower = filtro.lowercase()
+            val filtrados = servicos.filter {
+                it.nome.lowercase().contains(filtroLower) ||
+                        it.categoria.lowercase().contains(filtroLower)
+            }
+            adapter.updateLista(filtrados)
         }
     }
 }
