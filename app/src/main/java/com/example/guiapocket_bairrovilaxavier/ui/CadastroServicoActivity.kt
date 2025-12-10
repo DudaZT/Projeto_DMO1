@@ -24,9 +24,10 @@ class CadastroServicoActivity : AppCompatActivity() {
 
     // Launcher para abrir a galeria
     private val launcherGaleria = registerForActivityResult(
-        ActivityResultContracts.OpenDocument()
+        ActivityResultContracts.OpenDocument() // Abre a galeria
     ) { uri ->
         uri?.let {
+            // Permissão para ler a imagem
             contentResolver.takePersistableUriPermission(
                 it,
                 Intent.FLAG_GRANT_READ_URI_PERMISSION

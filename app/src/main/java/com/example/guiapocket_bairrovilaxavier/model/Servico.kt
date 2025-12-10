@@ -16,8 +16,8 @@ data class Servico(
     val endereco: String,
     val telefone: String,
     val website: String,
-    val imagemUri: String
+    val imagemUri: String // Salvo como String no banco
 ) : Serializable {
     val imagem: Uri
-        get() = imagemUri.toUri()
+        get() = imagemUri.toUri() // Converte automaticamente
 }
