@@ -105,7 +105,7 @@ Agora os usuários podem cadastrar novos estabelecimentos:
 
 ## 🎥 Demonstração em Vídeo
 
-📹 **[Clique Aqui - Demonstração do App](https://github.com/DudaZT/Projeto_DMO1/blob/main/video/videodemonstracao.webm)**
+📹 **[Clique Aqui - Demonstração do App](https://github.com/DudaZT/Projeto_DMO1/blob/main/video/videodemonstracao.mp4)**
 
 ---
 
